@@ -4,40 +4,61 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>PETAL</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" href="styles/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display|News+Cycle' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+
 </head>
 <body>
 
-<div class="homepage-hero-module">
-    <div class="video-container">
-        <div class="filter"></div>
-        <video autoplay loop class="fillWidth">
-            <source src="video/MP4/Busy.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="video/WEBM/Busy.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
-        <!-- <div class="poster hidden">
-            <img src="video/Snapshots/Busy.jpg" alt="">
-        </div> -->
 
-    </div> <!-- .video-container -->
-</div> <!-- .homepage-hero-module -->
-		<div class="selectChoice">
+	<div class="homepage-hero-module">
+	    <div class="video-container">
+	        <div class="filter"></div>
+	        <video autoplay loop class="fillWidth">
+	            <source src="video/MP4/Busy.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+	            <source src="video/WEBM/Busy.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+	        </video>
+	        <!-- <div class="poster hidden">
+	            <img src="video/Snapshots/Busy.jpg" alt="">
+	        </div> -->
+
+	    </div> <!-- .video-container -->
+	</div> <!-- .homepage-hero-module -->
+
+	<div class="mobileBackground"></div>
+
+	<div class="selectChoice">
 			<div class="container">
 				<h1>Petal</h1>
+				<p class="description">Style products to love or leave</p>
 				<h2>Select Category:</h2>
 				<form action="">
 					<select name="category" id="category">
-						<option>--Select--</option>
-						<option value="men">Men</option>
-						<option value="women">Women</option>
-						<option value="men, women">All</option>
+						<option disabled selected>--Select--</option>
+						<option value="">All Items</option>
+						<option disabled>--MEN--</option>
+						<option value="men">All Men</option>
+						<option value="mens-clothes">Clothing</option>
+						<option value="mens-shoes">Shoes</option>
+						<option value="mens-bags">Bags</option>
+						<option value="mens-grooming">Grooming</option>
+						<option disabled>--WOMEN--</option>
+						<option value="women">All Women</option>
+						<option value="womens-clothes">Clothing</option>
+						<option value="womens-shoes">Shoes</option>
+						<option value="handbags">Bags</option>
+						<option value="jewelry">Accessories</option>
+						<option value="womens-beauty">Beauty</option>
 					</select>
 				</form>
 			</div>
 		</div>
 
 		<div class="products"></div>
+
+		<button class="toTop"><i class="fa fa-angle-double-up"></i></button>
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

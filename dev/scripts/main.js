@@ -8,7 +8,11 @@ app.init = function(){
 		app.getProducts(category);
 
 		$('.selectChoice').addClass('shrink');
+
+		$('.toTop').addClass('show');
 	})
+
+	app.toTop();
 };
 
 app.getProducts = function(category){
@@ -35,26 +39,31 @@ app.displayProducts = function(displayRes){
 			// console.log("products");
 			var image = $('<img>').attr('src', product.image.sizes.IPhone.url);
 			var title = $('<h4>').text(product.unbrandedName);
-			var brand = $('<h5>').text(product.brand.name);
-			var cost = $('<h5>').text(product.priceLabel);
-			var link = $('<a>').attr('href', product.clickUrl).attr('target', '_blank').text('Love it! Gimme!');
-			var remove = $('<button>').addClass('remove').text('Love it not');
-			var divProduct = $('<div>').addClass('product').append(image, title, brand, cost, link, remove);
+			var brand = $('<h5>').text(product.brand.name).addClass('brand');
+			var cost = $('<h5>').text(product.priceLabel).addClass('price');
+			var link = $('<a>').attr('href', product.clickUrl).attr('target', '_blank').addClass('productBtn').text('Love it! Gimme!');
+			var remove = $('<button>').addClass('productBtn remove').text('Love it not');
+			var divWrapper = $('<div>').addClass('wrapper').append(image, title, brand, cost, link, remove);
+			var divProduct = $('<div>').addClass('product').append(divWrapper);
 
 			$('.products').append(divProduct);
-
 		}
 		
 	});
 	
 	//Remove item when remove button is clicked
 	$('.remove').on('click', function(){
-		var oneProd = $(this).parent();
+		var oneProd = $(this).parent().parent();
 		console.log(oneProd);
-		$(oneProd).fadeOut(200);
+		$(oneProd).fadeOut();
 	});
 };
 
+app.toTop = function(){
+	$('.toTop').on('click', function(){
+		$('html, body').animate({ scrollTop: 0 }, 'slow');
+	});
+};
 
 $(function(){
 	app.init();

@@ -30,10 +30,10 @@ gulp.task('scripts', function() {
 		.pipe(reload({stream: true}));
 });
 
-gulp.task('default', ['browser-sync','styles','scripts','watch']);
-
 gulp.task('browser-sync', function() {
 	browserSync.init({
 		server: './public'
 	})
 });
+
+gulp.task('default', ['browser-sync','styles','scripts','watch']);
